@@ -13,7 +13,7 @@ struct node*ptr;
 ptr=(struct node*)malloc(sizeof(struct node));
 ptr->data=value;
 ptr->next=NULL;
-if((front==NULL)&&(rear=NULL))
+if((front==NULL)&&(rear==NULL))
 {
 front=rear=ptr;
 }
@@ -22,7 +22,7 @@ else
 rear->next=ptr;
 rear=ptr;
 }
-printf("Node is Inserted\n\n");
+printf("\nNode is Inserted\n\n");
 }
 int dequeue()
 {
@@ -49,34 +49,34 @@ printf("\n queue is empty\n");
 }
 else
 {
-printf("\nqueue is:");
+printf("\nqueue is:\n");
 temp=front;
 while(temp)
 {
-printf("%d",temp->data);
+printf("\n%d\n",temp->data);
 temp=temp->next;
 }
-printf("NULL\n");
+printf("\nNULL\n");
 }
 }
 int main()
 {
 int choice,value;
-printf("implementation of queue using linked list");
+printf("\nimplementation of queue using linked list\n");
 while(choice!=4)
 {
 printf("\n1.enqueue\n2.Dequeue\n3.Display\n4.Exit");
-printf("\n enter your choice\n");
+printf("\nenter your choice\n");
 scanf("%d",&choice);
 switch(choice)
 {
 case 1:
-	printf("enter the value to be inserted");
+	printf("\nenter the value to be inserted\n");
 	scanf("%d",&value);
 	enqueue(value);
 	break;
 case 2:
-	printf("popped element is:%d\n",dequeue());
+	printf("\npopped element is:%d\n",dequeue());
 	break;
 case 3 :
 	display();
@@ -85,7 +85,7 @@ case 4:
 	exit(0);
 	break;
 default:
-	printf("\n invalid choice\n");
+	printf("\ninvalid choice\n");
 	break;
 }
 }
